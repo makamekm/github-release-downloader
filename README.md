@@ -1,3 +1,5 @@
-# github-release-downloader
+# GitHub Release Downloader
 
-GitHub Release Downloader (ghrdl <user> <repo> <regexp> <insecure>)
+```
+ghrdl [user] [repo] [regexp] [insecure]
+```
