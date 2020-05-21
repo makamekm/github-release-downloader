@@ -16,7 +16,7 @@ const resolve = require("path").resolve;
 const http = require("http");
 const https = require("https");
 const fs = require("fs");
-const child = require("child_process").execFile;
+const execFile = require("child_process").execFile;
 
 const getReleases = async () => {
   return new Promise((r, e) => {
@@ -107,7 +107,7 @@ downloadAndRun((executablePath) => {
   console.log("The file has been downloaded!", executablePath);
 
   if (shouldRun) {
-    child(executablePath, parameters, (err) => {
+    execFile(executablePath, parameters, (err) => {
       if (err) {
         console.error(err);
       }
