@@ -9,10 +9,14 @@ if (args[3]) {
   process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 }
 
+const shouldRun = args[4];
+const parameters = args.splice(5);
+
 const resolve = require("path").resolve;
 const http = require("http");
 const https = require("https");
 const fs = require("fs");
+const child = require("child_process").execFile;
 
 const getReleases = async () => {
   return new Promise((r, e) => {
@@ -101,4 +105,12 @@ const downloadAndRun = async function (cb) {
 
 downloadAndRun((executablePath) => {
   console.log("The file has been downloaded!", executablePath);
+
+  if (shouldRun) {
+    child(executablePath, parameters, (err) => {
+      if (err) {
+        console.error(err);
+      }
+    });
+  }
 });

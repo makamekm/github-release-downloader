@@ -1,7 +1,7 @@
 {
   "name": "ghrdl",
-  "version": "1.0.2",
-  "description": "GitHub Release Downloader (ghrdl <user> <repo> <regexp> <insecure>)",
+  "version": "1.0.3",
+  "description": "GitHub Release Downloader (ghrdl [user] [repo] [regexp] [insecure] [shouldRun] [exeParameters])",
   "repository": {
     "type": "git",
     "url": "https://github.com/makamekm/github-release-downloader.git"
